@@ -21,7 +21,7 @@ public class PortfolioMapper {
                 .build();
     }
 
-    public static PortfolioResponse toResponseDTO(Portfolio response) {
+    public static PortfolioResponse toResponse(Portfolio response) {
         if (response == null) return null;
         return PortfolioResponse.builder()
                 .id(response.getId())
@@ -35,7 +35,7 @@ public class PortfolioMapper {
 
     public static List<PortfolioResponse> toResponseDTOList(List<Portfolio> responses) {
         return responses.stream()
-                .map(PortfolioMapper::toResponseDTO)
+                .map(PortfolioMapper::toResponse)
                 .collect(Collectors.toList());
     }
 
